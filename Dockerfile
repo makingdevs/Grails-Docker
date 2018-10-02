@@ -15,17 +15,13 @@ ENV PATH $GRAILS_HOME/bin:$PATH
 
 RUN mkdir /app
 
-WORKDIR /app
-
 COPY . /app
 
-WORKDIR /app/workspace
-
-RUN ./gradlew install
+RUN /app/workspace./gradlew install
 
 WORKDIR /app/web
 
-RUN grails refresh-dependencies
+RUN grails clean
 
 ENTRYPOINT ["grails"]
 CMD ["run-app"]
