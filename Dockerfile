@@ -17,4 +17,9 @@ RUN mkdir /app
 
 WORKDIR /app
 
+COPY . /app
+
+RUN grails refresh-dependencies
+
 ENTRYPOINT ["grails"]
+CMD ["run-app"]
