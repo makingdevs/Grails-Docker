@@ -34,4 +34,4 @@ WORKDIR /app/web
 RUN grails clean
 
 ENTRYPOINT ["grails"]
-CMD ["run-app"]
+CMD ["run-app", "-Dgrails.env=test"]
