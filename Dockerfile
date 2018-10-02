@@ -18,7 +18,8 @@ RUN mkdir /app
 WORKDIR /app
 
 COPY . /app
-RUN ls .
+
+WORKDIR /app/web
 
 RUN grails refresh-dependencies
 
