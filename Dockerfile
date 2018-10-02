@@ -15,9 +15,13 @@ ENV PATH $GRAILS_HOME/bin:$PATH
 
 RUN mkdir /app
 
+WORKDIR /app
+
 COPY . /app
 
-RUN /app/workspace./gradlew install
+WORKDIR /app/workspace
+
+RUN ./gradlew install
 
 WORKDIR /app/web
 
