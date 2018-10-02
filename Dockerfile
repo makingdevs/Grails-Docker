@@ -29,7 +29,9 @@ WORKDIR /app/workspace
 
 RUN ./gradlew install
 
-WORKDIR /app/web
+ARG APP_NAME
+
+WORKDIR /app/$APP_NAME
 
 RUN grails clean
 
