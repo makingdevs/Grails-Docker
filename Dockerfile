@@ -19,11 +19,11 @@ WORKDIR /app
 
 COPY . /app
 
-RUN ls .
+WORKDIR /app/workspace
+
+RUN ./gradlew install
 
 WORKDIR /app/web
-
-RUN ls .
 
 RUN grails refresh-dependencies
 
